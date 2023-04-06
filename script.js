@@ -4,7 +4,6 @@ let cards = document.querySelector(".cards");
 let inputSearch = document.querySelector(".search__input");
 let selectList = document.querySelector("#select");
 console.log(selectList);
-
 // Отрисовывает одну карточку
 function createCard(obj) {
   let article = document.createElement("div");
@@ -67,18 +66,16 @@ function showCards(arr) {
 //ПОИСК
 
 inputSearch.addEventListener("input", searchData);
+selectList.addEventListener("click", searchData);
 
 function searchData() {
   let result = data.filter(
     (obj) =>
       (obj.name.toLowerCase().includes(inputSearch.value.toLowerCase()) &&
-        obj.house.toLowerCase() == selectList.value.toLowerCase()) ||
-      obj.name.toLowerCase().includes(inputSearch.value.toLowerCase())
+        selectList.value === "Choose") ||
+      (obj.house.toLowerCase().includes(selectList.value.toLowerCase()) &&
+        obj.name.toLowerCase().includes(inputSearch.value.toLowerCase()))
   );
   cards.innerHTML = "";
   showCards(result);
 }
-
-// SELECT POISK
-
-selectList.addEventListener("click", searchData);
