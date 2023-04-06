@@ -37,8 +37,8 @@ function showCards(arr) {
 //1. Отрисовываем массив с уникальными значениями HOUSE
 export const getSelect = (array) => {
   const house = [];
-  array.forEach((obj) => {
-    house.push(obj.house);
+  array.forEach(function (obj) {
+    if (obj.house !== "") return house.push(obj.house);
   });
   return new Set(house);
 };
@@ -60,15 +60,15 @@ uniqHouse.forEach((elem) => {
 
 //ПОИСК
 
-inputSearch.addEventListener("input", searchData);
-selectList.addEventListener("click", searchData);
+inputSearch.addEventListener("input", searchData); // события для поиска
+selectList.addEventListener("click", searchData); // событие для select
 
 function searchData() {
   let result = data.filter(
     (obj) =>
-      (obj.name.toLowerCase().includes(inputSearch.value.toLowerCase()) &&
-        selectList.value === "Choose") ||
-      (obj.house.toLowerCase().includes(selectList.value.toLowerCase()) &&
+      (obj.name.toLowerCase().includes(inputSearch.value.toLowerCase()) && // если имя включает подстроку из импута и выбран селект chose
+        selectList.value === "Choose") || // ИЛИ
+      (obj.house.includes(selectList.value) && // если значение дома включает значение выбранного селекта И имя включает подстроку из импута
         obj.name.toLowerCase().includes(inputSearch.value.toLowerCase()))
   );
   cards.innerHTML = "";
