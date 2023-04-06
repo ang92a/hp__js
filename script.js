@@ -3,7 +3,7 @@ import { data } from "./hp.js"; // импорт массива из файла j
 let cards = document.querySelector(".cards");
 let inputSearch = document.querySelector(".search__input");
 let selectList = document.querySelector("#select");
-console.log(selectList);
+
 // Отрисовывает одну карточку
 function createCard(obj) {
   let article = document.createElement("div");
