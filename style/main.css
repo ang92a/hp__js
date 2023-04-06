@@ -1,0 +1,55 @@
+.main__wrapper {
+    padding: 40px 0;
+}
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.article {
+    height: 409px;
+    width: 334px;
+    background: #FFFFFF;
+    border: 1px solid #DEE2E6;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.article__img {
+    display: block;
+    height: 192px;
+    width: 334px;
+    object-fit: cover;
+    object-position: center -100px
+}
+
+.articleText__wrapper {
+    padding: 24px
+}
+
+.article__name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    color: #152536;
+}
+
+.article__actor,
+.article__gender,
+.article__house,
+.article__wand,
+.article__alive {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #152536;
+}
