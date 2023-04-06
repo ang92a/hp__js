@@ -71,8 +71,9 @@ inputSearch.addEventListener("input", searchData);
 function searchData() {
   let result = data.filter(
     (obj) =>
-      obj.name.toLowerCase().includes(inputSearch.value.toLowerCase()) &&
-      obj.house.toLowerCase() == selectList.value.toLowerCase()
+      (obj.name.toLowerCase().includes(inputSearch.value.toLowerCase()) &&
+        obj.house.toLowerCase() == selectList.value.toLowerCase()) ||
+      obj.name.toLowerCase().includes(inputSearch.value.toLowerCase())
   );
   cards.innerHTML = "";
   showCards(result);
